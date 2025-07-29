@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow chart</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });</script>
+<body>
+    <pre class="mermaid">
+graph TD
+    A[Start] --> B(Create Product)
+
+    B --> C{Has Subsidy?}
+    C -- Yes --> D[Create Subsidy Org]
+    D --> E[Assign Subsidy %]
+    E --> F[INPUT APH]
+
+    C -- No --> F
+
+    F --> G[Generate Pricing]
+    G --> H[Onboard Customers]
+
+
+    H --> I[Generate Quotes]
+    I --> J{Customer Agree?}
+    J -- Yes --> T[Quote Status Pending Pay]
+    
+    T--> K{Pay?}
+    K -- Yes --> L[Active Policy]
+    K -- No --> M[Follow Up]
+    J -- No --> N[End]
+    
+    
+    
+
+    L --> O[Monitor Policy]
+    O --> P{Claim?}
+    P -- Yes --> Q[Process Claim]
+    Q --> R[End]
+    P -- No --> S[End]
+
+    style A fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style B fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style C fill:#f9f,stroke:#333,stroke-width:2px,color:#333
+    style D fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style E fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style F fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style G fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style H fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style I fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style J fill:#f9f,stroke:#333,stroke-width:2px,color:#333
+    style K fill:#f9f,stroke:#333,stroke-width:2px,color:#333
+    style L fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style M fill:#ccc,stroke:#333,stroke-width:2px,color:#333
+    style N fill:#ccc,stroke:#333,stroke-width:2px,color:#333
+    style O fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style P fill:#f9f,stroke:#333,stroke-width:2px,color:#333
+    style Q fill:#ace,stroke:#333,stroke-width:2px,color:#333
+    style R fill:#ccc,stroke:#333,stroke-width:2px,color:#333
+    style S fill:#ccc,stroke:#333,stroke-width:2px,color:#333
+    style T fill:#ace,stroke:#333,stroke-width:2px,color:#333
+</pre>
+</body>
+</html>
+
